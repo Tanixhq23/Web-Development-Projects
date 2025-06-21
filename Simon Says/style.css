@@ -1,35 +1,106 @@
-body{
+/* Engaging, vibrant animated gradient background */
+body {
     text-align: center;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ff4e50, #1fddff, #a18cd1, #fbc2eb);
+    background-size: 600% 600%;
+    animation: gradientFlow 18s ease infinite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.5s ease-in-out;
+    overflow-x: hidden;
 }
-.btn{
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Simon Says buttons */
+.btn {
     height: 200px;
-    width:200px;
+    width: 200px;
     border-radius: 20%;
     border: 10px solid black;
-    margin : 2.5rem;
+    margin: 2.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.btn-container{
+.btn:active {
+    transform: scale(0.96);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Container */
+.btn-container {
     display: flex;
     justify-content: center;
-}
-.yellow{
-    background-color: #f99b45;
-}
-.red{
-    background-color: #d95980;
-}
-.green{
-    background-color: #63aac0;
-}
-.purple{
-    background-color: #819ff9;
+    flex-wrap: wrap;
 }
 
-.flash{
-    background-color: white;
+/* Button colors */
+.yellow {
+    background-color: #ffc93c;
 }
 
-.userflash{
-    background-color: green;
+.red {
+    background-color: #ff6b6b;
+}
+
+.green {
+    background-color: #1dd1a1;
+}
+
+.purple {
+    background-color: #5f27cd;
+}
+
+/* Flash effects */
+.flash {
+    background-color: white !important;
+    transition: background-color 0.2s ease;
+}
+
+.userflash {
+    background-color: green !important;
+    transition: background-color 0.2s ease;
+}
+
+/* Social link */
+.social {
+    text-decoration: none;
+    font-size: large;
+    color: black;
+}
+
+/* Footer text */
+.Buildby {
+    font-size: larger;
+    margin-top: 2rem;
+    color: #111;
+}
+
+/* Heading */
+h1 {
+    text-decoration: underline;
+    color: #222;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .btn {
+        height: 140px;
+        width: 140px;
+        margin: 1rem;
+    }
 }
